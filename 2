@@ -1,0 +1,9 @@
+n = int(input())
+stars = 0
+cnt = 1
+for i in range(n):
+    stars += 1  # До середины количество звёзд растёт
+    for j in range(stars):
+        print(cnt, end=" ")
+        cnt += 1
+    print()
