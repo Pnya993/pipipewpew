@@ -1,0 +1,14 @@
+
+s1 = input()
+s2 = input()
+cnt1 = ''
+cnt2 = ''
+for i in s1:
+    if i.isalpha():
+        cnt1 += i
+for o in s2:
+    if o.isalpha():
+        cnt2 += o
+if cnt1.lower() == cnt2.lower():
+    print('YES')
+else: print('NO')
