@@ -1,0 +1,25 @@
+n = int(input())
+
+# переменные для хранения предыдущей фамилии автора и названия книги
+previous_book = ''
+# переменная флага указывает, сохранен ли порядок сортировки книг:
+is_ordered = 'YES'
+
+for i in range(n):
+    s = input()
+    # извлекаем фамилию автора до первого пробела
+    current_surname = s[: s.find(' ')]
+    # извлекаем название книги между кавычками «»
+    current_title = s[s.find('«') + 1 : s.rfind('»')]
+    # склеиваем фамилию автора и название книги
+    current_book = current_surname + current_title
+    
+    # если текущая книга меньше предыдущей
+    # то порядок сортировки нарушен
+    if current_book < previous_book:
+        is_ordered = 'NO'
+    
+    # обновляем предыдущие значения книги на текущие
+    previous_book = current_book
+
+print(is_ordered)
